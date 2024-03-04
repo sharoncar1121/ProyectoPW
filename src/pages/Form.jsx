@@ -1,6 +1,8 @@
 
 export const Form = () => {
   return (
-    <div>Form</div>
+    <> 
+    <h1>Formulario</h1>
+ </>
   )
 }

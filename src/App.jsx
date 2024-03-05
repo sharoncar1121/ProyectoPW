@@ -6,7 +6,8 @@ import axios from 'axios';
 import { Login } from './pages/Login';
 import { Form } from './pages/Form';
 import { Registros } from './pages/Registros';
-import {Dashboard} from './pages/Dashboard'
+import {Dashboard} from './pages/Dashboard';
+import {Perfil} from './pages/Perfil';
 
 function App() {
   const [user, setUser] = useState({
@@ -36,6 +37,7 @@ function App() {
           <Route path='/Home' element={<Dashboard/>}/>      
           <Route path='/registros' element={<Registros />} />
           <Route path='/form' element={<Form />} />
+          <Route path='/Perfil' element={<Perfil />} />
         </Routes>
       </BrowserRouter>
     </>

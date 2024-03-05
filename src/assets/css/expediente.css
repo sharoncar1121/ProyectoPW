@@ -1,0 +1,39 @@
+.Encabezado-Expediente{
+    text-align: center;
+    margin: auto;
+}
+
+.Informacion-Expediente{
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+.foto-Expediente{
+    width: 25%;
+    float: left;
+}
+
+h3{
+    width: 25%;
+    float: left;
+}
+.foto-Expediente img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #000;
+    margin-inline: 40px;
+    box-shadow: 10px 2px 8px 0 rgba(0, 0, 0, 0.3)
+}
+
+.datos-fila3 h3{
+    text-align: center;
+}
+
+.Pie-Expediente button{
+    border-radius: 1%;
+    margin-left: 40px;
+    width: 180px;
+    height: 40px;
+}

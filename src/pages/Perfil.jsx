@@ -8,7 +8,7 @@ export const Perfil = () => {
     <> 
     <Expediente></Expediente>
     <div>
-    <Typography variant="h2" gutterBottom>
+    <Typography variant="h4" gutterBottom style={{ textAlign:'center'}}>
         Carnet De Vacunación
       </Typography>
     </div>

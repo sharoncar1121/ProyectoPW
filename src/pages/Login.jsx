@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Alert from '@mui/material/Alert';
+import { useNavigate } from "react-router-dom";
 
 const temaLogin = createTheme();
 
@@ -16,14 +17,16 @@ export const Login = () => {
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [mensajeValidacion, setMensajeValidacion] = useState('');
+  const navigate = useNavigate();
 
-  const user = 'usuario';
+  const user = 'prueba';
   const contrasenia = '1234';
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (usuario === user && contrasena === contrasenia) {
       setMensajeValidacion('Usuario validado');
+      navigate('/Home')
     } else {
       setMensajeValidacion('Usuario o contraseña incorrectos');
     }

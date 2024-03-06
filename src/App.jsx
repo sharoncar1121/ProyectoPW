@@ -10,30 +10,31 @@ import {Dashboard} from './pages/Dashboard';
 import {Perfil} from './pages/Perfil';
 
 function App() {
-  const [user, setUser] = useState({
-    username: ''
-  })
+//  const [user, setUser] = useState({
+//    username: ''
+ // })
 
   
-  useEffect(() => {
-    checkAuth();
-    async function checkAuth() {
-      try {
+ // useEffect(() => {
+ //   checkAuth();
+//    async function checkAuth() {
+ //     try {
        // const { data } = await axios(`${import.meta.env.VITE_URL}/api/users`, { withCredentials: true });
-        setUser({
-          username: data.username
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  }, []);
+ //       setUser({
+ //         username: data.username
+  //      });
+ //     } catch (error) {
+ //       console.log(error);
+ //     }
+ //   }
+ // }, []);
 
   return (
     <>
     <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login iniciarSesion={setUser}/>} />
+         {/* <Route path='/' element={<Login iniciarSesion={setUser}/>} />*/}
+         <Route path='/' element={<Login />} />
           <Route path='/Home' element={<Dashboard/>}/>      
           <Route path='/registros' element={<Registros />} />
           <Route path='/form' element={<Form />} />

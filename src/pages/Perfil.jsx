@@ -5,14 +5,11 @@ import Typography from '@mui/material/Typography';
 
 export const Perfil = () => {
   return (
-    <> 
+  <> 
     <Expediente></Expediente>
     <div>
-    <Typography variant="h4" gutterBottom style={{ textAlign:'center'}}>
-        Carnet De Vacunación
-      </Typography>
+      <Typography variant="h4" gutterBottom style={{ textAlign:'center'}}>Carnet De Vacunación</Typography>
     </div>
-    </>
+  </>
   )
 }
-

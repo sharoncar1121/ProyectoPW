@@ -78,17 +78,7 @@ export const Login = () => {
                   autoComplete="username"
                   autoFocus
                   onChange={(e) => setUsuario(e.target.value)}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      borderColor: '#70AD5F', // Color del borde normal
-                    },
-                    '& .MuiOutlinedInput-root:hover': {
-                      borderColor: '#70AD5F', // Color del borde al pasar el ratón
-                    },
-                    '& .Mui-focused .MuiOutlinedInput-root': {
-                      borderColor: '#70AD5F', // Color del borde enfocado
-                    },
-                  }}
+                  color="success"
                 />
 
                 <TextField
@@ -101,17 +91,7 @@ export const Login = () => {
                   id="password"
                   autoComplete="current-password"
                   onChange={(e) => setContrasena(e.target.value)}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      borderColor: '#70AD5F', // Color del borde normal
-                    },
-                    '& .MuiOutlinedInput-root:hover': {
-                      borderColor: '#70AD5F', // Color del borde al pasar el ratón
-                    },
-                    '& .Mui-focused .MuiOutlinedInput-root': {
-                      borderColor: '#70AD5F', // Color del borde enfocado
-                    },
-                  }}
+                  color="success"
                 />
                 
                 <Button

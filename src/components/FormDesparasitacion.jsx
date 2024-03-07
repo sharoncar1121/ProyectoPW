@@ -9,9 +9,9 @@ export const FormDesparasitacion = () => {
 
     <>
 
-      <div style={{ textAlign: 'center', paddingTop: '20px', color: '#181E1C' }}>
+      <div style={{ textAlign: 'center', paddingTop: '20px', color: '#181E1C', paddingBottom: '20px' }}>
         <Typography variant="h5" fontFamily="Roboto" fontWeight="bold">
-          Formulario
+          Desparacitacion Externa
         </Typography>
       </div>
 
@@ -23,21 +23,22 @@ export const FormDesparasitacion = () => {
             border: '1px solid #000', padding: '10px',
             width: '200px', // Ajuste para hacer más ancho
             Height: '200px',// maximo alto
-            marginTop: '10px', // Mover hacia abajo 
+            marginTop: '10px', // Mover hacia abajo
+            borderRadius: '8px',
           }}>
-          <Typography fontWeight='bold' variant='h6'>Fecha Desparasitacion:</Typography>
+          <Typography variant='subtitle1'>Fecha Desparasitacion:</Typography>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker label="Seleccione la Fecha" />
           </LocalizationProvider>
-          <Typography fontWeight='bold' variant='h6'>Fecha proxima cita:</Typography>
+          <Typography variant='subtitle1'>Fecha proxima cita:</Typography>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker label="Seleccione la Fecha" />
           </LocalizationProvider>
-          <Typography fontWeight='bold' variant='h6'>Nombre Veterinario:</Typography>
+          <Typography variant='subtitle1'>Nombre Veterinario:</Typography>
           <TextField
             label='Nombre del Veterinario'
             variant='outlined'
-            type='number'
+            type='Text'
             helperText='Ej. Jose Ramon Molina'
             style={{ width: '90%' }}
           ></TextField>

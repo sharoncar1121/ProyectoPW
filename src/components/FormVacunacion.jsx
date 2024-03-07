@@ -21,13 +21,15 @@ export const FormVacunacion = () => {
             border: '1px solid #000', padding: '10px',
             width: '200px', // Ajuste para hacer más ancho
             maxHeight: '200px',// maximo alto
-            marginTop: '10px', // Mover hacia abajo 
+            marginTop: '10px', // Mover hacia abajo
+            borderTopLeftRadius: '8px',
+            borderBottomLeftRadius: '8px',
           }}>
-          <Typography fontWeight='bold' variant='h6'>Fecha:</Typography>
+          <Typography variant='subtitle1'>Fecha:</Typography>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker label="Seleccione la Fecha" />
           </LocalizationProvider>
-          <Typography fontWeight='bold' variant='h6'>Peso:</Typography>
+          <Typography variant='subtitle1'>Peso:</Typography>
           <TextField
             label='Ingrese el Peso'
             variant='outlined'
@@ -43,9 +45,9 @@ export const FormVacunacion = () => {
           border: '1px solid #000', padding: '10px',
           width: '260px', // Ajuste para hacer más ancho
           maxHeight: '200px',// maximo alto
-          marginTop: '10px', // Mover hacia abajo 
+          marginTop: '10px', // Mover hacia abajo
         }}>
-          <Typography variant='h6' fontWeight='bold'> Vacuna Aplicada:</Typography>
+          <Typography variant='subtitle1'> Vacuna Aplicada:</Typography>
           <TextField
             label='Ingrese el Nombre de la Vacuna'
             variant='outlined'
@@ -53,7 +55,7 @@ export const FormVacunacion = () => {
             helperText='ej. Parvovirus Canino'
             style={{ width: '100%' }}
           ></TextField>
-          <Typography fontWeight='bold' variant='h6'>Cantidad de Dosis:</Typography>
+          <Typography variant='subtitle1'>Cantidad de Dosis:</Typography>
           <TextField
             label='Ingrese las dosis'
             variant='outlined'
@@ -66,9 +68,9 @@ export const FormVacunacion = () => {
           border: '1px solid #000', padding: '10px',
           width: '260px', // Ajuste para hacer más ancho
           maxHeight: '200px',// maximo alto
-          marginTop: '10px', // Mover hacia abajo 
+          marginTop: '10px', // Mover hacia abajo
         }}>
-          <Typography variant='h6' fontWeight='bold' style={{ wordWrap: 'break-word' }}> Refuerzo Aplicado:</Typography>
+          <Typography variant='subtitle1' style={{ wordWrap: 'break-word' }}> Refuerzo Aplicado:</Typography>
           <TextField
             label='Ingrese el Nombre de la Vacuna'
             variant='outlined'
@@ -76,7 +78,7 @@ export const FormVacunacion = () => {
             helperText='ej. Parvovirus Canino'
             style={{ width: '100%' }}
           ></TextField>
-          <Typography fontWeight='bold' variant='h6'>Cantidad de Dosis:</Typography>
+          <Typography variant='subtitle1'>Cantidad de Dosis:</Typography>
           <TextField
             label='Ingrese las dosis'
             variant='outlined'
@@ -90,19 +92,21 @@ export const FormVacunacion = () => {
             border: '1px solid #000', padding: '10px',
             width: '220px', // Ajuste para hacer más ancho
             maxHeight: '200px',// maximo alto
-            marginTop: '10px', // Mover hacia abajo 
+            marginTop: '10px', // Mover hacia abajo
+            borderTopRightRadius: '8px',
+            borderBottomRightRadius: '8px',
           }}>
-          <Typography fontWeight='bold' variant='h6'>Fecha proxima cita:</Typography>
+          <Typography variant='subtitle1'>Fecha proxima cita:</Typography>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker label="Seleccione la Fecha" />
           </LocalizationProvider>
-          <Typography fontWeight='bold' variant='h6'>Nombre Veterinario:</Typography>
+          <Typography variant='subtitle1'>Nombre Veterinario:</Typography>
           <TextField
-            label='Nombre del Veterinario'
+            label='Ej. Jose Ramon Molina'
             variant='outlined'
             type='number'
             helperText='Ej. Jose Ramon Molina'
-            style={{ width: '90%' }}
+            style={{ width: '90%',  }}
           ></TextField>
         </Box>
 

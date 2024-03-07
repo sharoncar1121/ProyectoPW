@@ -19,7 +19,7 @@ export const Registros = () => {
   return (
     <div>
       <div style={{ textAlign: 'center', paddingTop: '20px', color: '#181E1C' }}>
-        <Typography variant="h1" fontFamily="Roboto" fontWeight="bold">
+        <Typography variant="h2" fontFamily="Roboto" fontWeight="bold">
           Registro
         </Typography>
       </div>

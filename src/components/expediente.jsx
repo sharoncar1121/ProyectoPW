@@ -5,7 +5,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import {Typography, TextField, Container} from '@mui/material';
+import {Typography, TextField, Container, FormControl, NativeSelect} from '@mui/material';
 
 
 export const Expediente = () => {
@@ -22,57 +22,61 @@ export const Expediente = () => {
         </div>
         
         <div style={{ width: '75%',  float:'left'}}>
-          <Typography variant="h6" gutterBottom style={{ width: '4%',  float:'left'}}> Nombre: </Typography>
-          <Container style={{ width: '21%',  float:'left'}}>
-              <TextField   label='Ejemplo' variant='outlined' type='text' disabled></TextField>
+          <Typography variant="subtitle1" gutterBottom style={{ width: '6%', height:'80px', float:'left', paddingTop:'10px'}}> Nombre: </Typography>
+          <Container style={{ width: '21%',  float:'left', padding:'0%'}}>
+              <TextField style={{ float:'left', width:'270px'}} label='Ejemplo' variant='outlined' type='text' disabled></TextField>
            </Container> 
 
-          <Typography variant="h6" gutterBottom style={{ width: '4%',  float:'left'}}> Especie: </Typography>
-          <Container style={{ width: '21%',  float:'left'}}>
-              <TextField   label='Ejemplo' variant='outlined' type='text'></TextField>
+          <Typography variant="subtitle1" gutterBottom style={{ width: '6%',  height:'80px', float:'left', paddingTop:'10px'}}> Especie: </Typography>
+          <Container style={{ width: '21%',  float:'left', paddingInlineStart:'0%', paddingTop:'10px'}}>
+            <FormControl fullWidth>
+              <NativeSelect defaultValue={1} inputProps={{ name: 'especie', id: 'uncontrolled-native',}} disabled>
+                <option value={1}>Canino</option>
+                <option value={2}>Felino</option>
+             </NativeSelect>
+            </FormControl>
            </Container>
 
-          <Typography variant="h6" gutterBottom style={{ width: '12%',  float:'left'}}> Fecha De Registro: </Typography>
-          <Container style={{ width: '30%',  float:'left'}}>
-            <LocalizationProvider style={{ width:'100%'}} dateAdapter={AdapterDayjs}>
-              <DatePicker label="Seleccione la Fecha" />
+          <Typography variant="subtitle1" gutterBottom style={{ width: '12%',  height:'80px', float:'left', paddingTop:'10px'}}> Fecha De Registro: </Typography>
+          <Container style={{ width: '30%',  float:'left', paddingInlineStart:'1%'}}>
+            <LocalizationProvider style={{ width:'100%'}} dateAdapter={AdapterDayjs} >
+              <DatePicker label="Seleccione la Fecha" disabled />
             </LocalizationProvider>
            </Container>
         </div>
         
         <div style={{ width: '75%',  float:'left'}}>
-          <Typography variant="h6" gutterBottom style={{ width: '4%',  float:'left'}}> Raza: </Typography>
-          <Container style={{ width: '21%',  float:'left'}}>
-              <TextField   label='Ejemplo' variant='outlined' type='text'></TextField>
+          <Typography variant="subtitle1" gutterBottom style={{ width: '4%',  height:'80px', float:'left', paddingTop:'10px'}}> Raza: </Typography>
+          <Container style={{ width: '23%',  float:'left'}}>
+          <TextField style={{ float:'left', width:'270px'}} label='Ejemplo' variant='outlined' type='text' disabled></TextField>
            </Container> 
 
-          <Typography variant="h6" gutterBottom style={{ width: '4%',  float:'left'}}> Color: </Typography>
-          <Container style={{ width: '21%',  float:'left'}}>
-              <TextField   label='Ejemplo' variant='outlined' type='text'></TextField>
+          <Typography variant="subtitle1" gutterBottom style={{ width: '4%',  float:'left', paddingTop:'10px'}}> Color: </Typography>
+          <Container style={{ width: '21%',  float:'left', paddingInlineEnd:'2%'}}>
+              <TextField  style={{ float:'left', width:'270px'}} label='Ejemplo' variant='outlined' type='text' disabled></TextField>
            </Container> 
 
-          <Typography variant="h6" gutterBottom style={{ width: '15%',  float:'left'}}> Fecha De Nacimiento: </Typography>
-          <Container style={{ width: '20%',  float:'left'}}>
+          <Typography variant="subtitle1" gutterBottom style={{ width: '15%',  float:'left', paddingTop:'10px'}}> Fecha De Nacimiento: </Typography>
+          <Container style={{ width: '30%',  float:'left', padding:'0%'}}>
             <LocalizationProvider style={{ width:'100%'}} dateAdapter={AdapterDayjs}>
-              <DatePicker label="Seleccione la Fecha" />
+              <DatePicker label="Seleccione la Fecha" disabled/>
             </LocalizationProvider>
            </Container>
         </div>
         
         <div style={{ width: '75%',  float:'left', textAlign:'center'}}>
-          <Typography variant="h6" gutterBottom style={{ width: '4%',  float:'left'}}> Propietario: </Typography>
+        <Typography variant="subtitle1" gutterBottom style={{ width: '6%',  height:'80px', float:'left', paddingTop:'10px'}}> Propietario: </Typography>
           <Container style={{ width: '21%',  float:'left'}}>
-              <TextField   label='Ejemplo' variant='outlined' type='text'></TextField>
+          <TextField style={{ float:'left', width:'270px'}} label='Ejemplo' variant='outlined' type='text' disabled></TextField>
            </Container> 
 
-          <Typography variant="h6" gutterBottom style={{ width: '4%',  float:'left'}}> Telefono: </Typography>
+          <Typography variant="subtitle1" gutterBottom style={{ width: '4%',  float:'left', paddingTop:'10px'}}> Telefono: </Typography>
           <Container style={{ width: '21%',  float:'left'}}>
-              <TextField   label='Ejemplo' variant='outlined' type='text'></TextField>
+              <TextField   label='Ejemplo' variant='outlined' type='text' disabled></TextField>
            </Container> 
         </div>
-      
+
       </div>
-      
       <Stack direction="row" spacing={2}>
         <Button variant="contained" style={{ width: '200px',  marginLeft:'40px', color:'#fff', background:'#000'}}> Editar Expediente </Button>
       </Stack>
@@ -82,5 +86,3 @@ export const Expediente = () => {
   )
 }
 
-
-//aqui va la foto de perfil junto con el boton de editar perfil

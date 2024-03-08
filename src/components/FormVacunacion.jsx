@@ -7,7 +7,7 @@ import { TextField, Box, Typography } from '@mui/material'
 export const FormVacunacion = () => {
   return (
     <>
-      <div style={{ textAlign: 'center', paddingTop: '20px',paddingBottom: '20px', color: '#181E1C' }}>
+      <div style={{ paddingTop: '20px',paddingBottom: '20px', color: '#181E1C' }}>
         <Typography variant="h5" fontFamily="Roboto" fontWeight="bold">
           Carnet de vacunacion
         </Typography>

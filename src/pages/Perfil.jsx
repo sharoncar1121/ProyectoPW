@@ -1,14 +1,12 @@
 import { Expediente } from "../components/expediente"
-import "../assets/css/perfil.css"
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import {FormVacunacion} from '../components/FormVacunacion'
 
 export const Perfil = () => {
   return (
   <> 
     <Expediente></Expediente>
-    <div>
-      <Typography variant="h4" gutterBottom style={{ textAlign:'center'}}>Carnet De Vacunación</Typography>
+    <div style={{ width: '100%', background:'#f34591'}}>
+    <FormVacunacion></FormVacunacion>
     </div>
   </>
   )

@@ -17,33 +17,32 @@ const sample = [
   ['30-04-2023', '04:30', 'ya va dando', 'ya no se :('],
 ];
 
-function createData(id, dessert, calories, fat, carbs, protein) {
-  return { id, dessert, calories, fat, carbs, protein };
+function createData(id, fecha, hora, paciente, motivo) {
+  return { id, fecha, hora, paciente, motivo};
 }
 
 const columns = [
   {
     width: 60,
     label: 'Fecha',
-    dataKey: 'dessert',
+    dataKey: 'fecha',
+    date: true,
   },
   {
     width: 120,
     label: 'Hora',
-    dataKey: 'calories',
-    numeric: true,
+    dataKey: 'hora',
+    date: true,
   },
   {
     width: 120,
     label: 'Paciente',
-    dataKey: 'fat',
-    numeric: true,
+    dataKey: 'paciente',
   },
   {
     width: 120,
     label: 'Motivo',
-    dataKey: 'carbs',
-    numeric: true,
+    dataKey: 'motivo',
   }
 ];
 
@@ -69,7 +68,7 @@ const VirtuosoTableComponents = {
 
 function fixedHeaderContent() {
   return (
-    <TableRow>
+    <TableRow sx={{ backgroundColor: '#f0f0f0' }}>
       {columns.map((column) => (
         <TableCell
           key={column.dataKey}
@@ -77,7 +76,8 @@ function fixedHeaderContent() {
           align={column.numeric || false ? 'right' : 'left'}
           style={{ width: column.width }}
           sx={{
-            backgroundColor: 'background.paper',
+            backgroundColor: '#6AA098',
+            color: '#000000',
           }}
         >
           {column.label}
@@ -94,6 +94,10 @@ function rowContent(_index, row) {
         <TableCell
           key={column.dataKey}
           align={column.numeric || false ? 'right' : 'left'}
+          sx={{
+            backgroundColor: row.fecha === '30-01-2023' ? 'rgba(182, 106, 82, 0.7)' : 'rgba(129, 153, 146, 0.7)',
+            color: '#000000',
+          }}
         >
           {row[column.dataKey]}
         </TableCell>

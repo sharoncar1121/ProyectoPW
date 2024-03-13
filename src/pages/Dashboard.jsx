@@ -8,7 +8,7 @@ export const Dashboard = () => {
   const boxStyles = {
     width: '45%', 
     marginLeft: '2%', 
-    marginTop: '20vh',
+    marginTop: '13vh',
     textAlign: 'center' 
   };
 

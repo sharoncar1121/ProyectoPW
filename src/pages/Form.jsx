@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { FormVacunacion } from '../components/FormVacunacion';
 import { RegistrosData } from '../components/RegistrosData';
 import { FormDesparasitacion } from '../components/FormDesparasitacion';

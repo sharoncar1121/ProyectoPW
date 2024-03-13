@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Filtro } from '../components/Filtro';
 import { Typography } from '@mui/material';
 

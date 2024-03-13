@@ -17,6 +17,7 @@ export const Login = () => {
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [mensajeValidacion, setMensajeValidacion] = useState('');
+  const [botonPresionado, setBotonPresionado] = useState(false);
   const navigate = useNavigate();
 
   const user = 'prueba';
@@ -24,6 +25,7 @@ export const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setBotonPresionado(true);
     if (usuario === user && contrasena === contrasenia) {
       setMensajeValidacion('Usuario validado');
       navigate('/Home')
@@ -78,7 +80,9 @@ export const Login = () => {
                   autoComplete="username"
                   autoFocus
                   onChange={(e) => setUsuario(e.target.value)}
-                  color="success"
+                  color={(botonPresionado && !usuario) ? "error" : "success"} 
+                  error={(botonPresionado && !usuario)} 
+                  helperText={(botonPresionado && !usuario) ? "Campo obligatorio" : ""} 
                 />
 
                 <TextField
@@ -91,7 +95,9 @@ export const Login = () => {
                   id="password"
                   autoComplete="current-password"
                   onChange={(e) => setContrasena(e.target.value)}
-                  color="success"
+                  color={(botonPresionado && !contrasena) ? "error" : "success"} 
+                  error={(botonPresionado && !contrasena)}
+                  helperText={(botonPresionado && !contrasena) ? "Campo obligatorio" : ""} 
                 />
 
                 <Button

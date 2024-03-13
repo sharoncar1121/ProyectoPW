@@ -10,22 +10,22 @@ import Paper from '@mui/material/Paper';
 import { TableVirtuoso } from 'react-virtuoso';
 
 const sample = [
-  ['12-03-2024', '23:30', 'funciona', 'si funciona'],
-  ['12-03-2024', '22:30', 'Satoru', 'Vacío inconmensurable'],
-  ['12-03-2024', '21:40', 'Sukuna', 'Relicario demoniaco'],
-  ['21-02-2024', '12:30', 'Baxter', 'Vacunación'],
-  ['30-01-2024', '01:30', 'Firulais','Desparacitación'],
-  ['28-01-2024', '02:30', 'ayuda :(', 'Chequeo'],
-  ['09-03-2023', '05:30', 'autzilio', 'Operación'],
-  ['11-03-2024', '12:30', 'ya va dando', 'ya no se :('],
-  ['11-03-2024', '11:30', 'ya va dando', 'ya no se :('],
-  ['11-03-2024', '13:30', 'ya va dando', 'ya no se :('],
-  ['30-04-2023', '04:30', 'ya va dando', 'ya no se :('],
-  ['30-04-2023', '04:30', 'ya va dando', 'ya no se :('],
+  ['13-03-2024', '23:30', 'Baxter', 'chequeo'],
+  ['13-03-2024', '22:30', 'Ranger', 'vacuna'],
+  ['13-03-2024', '21:40', 'Dino', 'Desparacitación'],
+  ['14-03-2024', '12:30', 'Baxter', 'chequeo'],
+  ['15-03-2024', '01:30', 'Firulais','Desparacitación'],
+  ['15-03-2024', '02:30', 'Baxter', 'Chequeo'],
+  ['09-03-2023', '05:30', 'Baxter', 'Operación'],
+  ['11-03-2024', '12:30', 'Dexter', 'Desparacitación'],
+  ['11-03-2024', '11:30', 'Dino', 'Desparacitación'],
+  ['15-03-2024', '04:30', 'Baxter', 'Chequeo'],
+  ['30-04-2023', '04:30', 'Dino', 'Desparacitación'],
+  ['30-04-2023', '04:30', 'Dino', 'Desparacitación'],
 ];
 
 function createData(id, fecha, hora, paciente, motivo) {
-  return { id, fecha, hora, paciente, motivo};
+  return { id, fecha, hora, paciente, motivo };
 }
 
 const columns = [
@@ -53,23 +53,28 @@ const columns = [
   }
 ];
 
-const rows = sample.map((item, index) => {
-  return createData(index, ...item);
-}).sort((a, b) => {
-  // Convertir las fechas a objetos Date para comparación
-  const dateA = new Date(a.fecha.split('-').reverse().join('-'));
-  const dateB = new Date(b.fecha.split('-').reverse().join('-'));
+const currentDate = new Date();
 
-  // Ordena primero por fecha
-  const dateComparison = dateB - dateA;
-  
-  // Si las fechas son iguales, ordena por hora
-  if (dateComparison === 0) {
-    return a.hora.localeCompare(b.hora);
-  }
-  
-  return dateComparison;
-});
+const formatCurrentDate = `${currentDate.getDate().toString().padStart(2, '0')}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getFullYear()}`;
+
+
+const todayData = sample.filter(item => item[0] === formatCurrentDate).map((item, index) => createData(index, ...item));
+
+
+const tomorrowDate = new Date(currentDate);
+tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+const formatTomorrowDate = `${tomorrowDate.getDate().toString().padStart(2, '0')}-${(tomorrowDate.getMonth() + 1).toString().padStart(2, '0')}-${tomorrowDate.getFullYear()}`;
+const tomorrowData = sample.filter(item => item[0] === formatTomorrowDate).map((item, index) => createData(todayData.length + index, ...item));
+
+
+const otherData = sample.filter(item => item[0] !== formatCurrentDate && item[0] !== formatTomorrowDate).sort((a, b) => {
+  const dateA = new Date(a[0].split('-').reverse().join('-') + ' ' + a[1]);
+  const dateB = new Date(b[0].split('-').reverse().join('-') + ' ' + b[1]);
+
+  return dateA - dateB;
+}).map((item, index) => createData(todayData.length + tomorrowData.length + index, ...item));
+
+const rows = [...todayData, ...tomorrowData, ...otherData];
 
 const VirtuosoTableComponents = {
   // eslint-disable-next-line react/display-name
@@ -108,9 +113,6 @@ function fixedHeaderContent() {
 }
 
 function rowContent(_index, row) {
-  const currentDate = new Date();
-  // Formateamos la fecha actual en formato 'DD-MM-YYYY'
-  const formatCurrentDate = `${currentDate.getDate().toString().padStart(2, '0')}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getFullYear()}`;
   return (
     <React.Fragment>
       {columns.map((column) => (

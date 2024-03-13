@@ -32,11 +32,11 @@ const currentDate = new Date();
 
 const formatCurrentDate = `${currentDate.getDate().toString().padStart(2, '0')}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getFullYear()}`;
 
-// Filtrar y ordenar citas de hoy
+
 const todayData = sample
   .filter(item => item[0] === formatCurrentDate)
   .sort((a, b) => {
-    // Convertir las horas en objetos Date para comparación
+   
     const horaA = new Date(`2000-01-01T${a[1]}`);
     const horaB = new Date(`2000-01-01T${b[1]}`);
     return horaA - horaB;

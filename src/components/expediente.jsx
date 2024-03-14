@@ -12,8 +12,8 @@ export const Expediente = () => {
   return (
   <>
     <main>
-      <div style={{ textAlign: 'center', paddingTop: '20px', color: '#181E1C', margin:'auto'}}>
-        <Typography variant="h2" gutterBottom> Expediente </Typography>
+    <div style={{ paddingTop: '20px', paddingBottom: '20px', color: '#181E1C', textAlign:'center'}}>
+        <Typography variant="h3" fontFamily="Roboto" fontWeight="bold"> Expediente </Typography>
       </div>
       
       <div style={{ width: '100%',  overflow: 'auto', color: '#181E1C',  marginBottom:'50px'}}>

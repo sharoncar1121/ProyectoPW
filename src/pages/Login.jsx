@@ -20,15 +20,14 @@ export const Login = () => {
   const [botonPresionado, setBotonPresionado] = useState(false);
   const navigate = useNavigate();
 
-  const user = 'prueba';
-  const contrasenia = '1234';
+  const user = { username: 'prueba', password: '1234' };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setBotonPresionado(true);
-    if (usuario === user && contrasena === contrasenia) {
-      setMensajeValidacion('Usuario validado');
+    if (usuario === user.username && contrasena === user.password) {
       navigate('/Home')
+      window.location.reload();
     } else {
       setMensajeValidacion('Usuario o contraseña incorrectos');
     }

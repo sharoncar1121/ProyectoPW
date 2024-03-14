@@ -40,8 +40,7 @@ const todayData = sample
     const horaA = new Date(`2000-01-01T${a[1]}`);
     const horaB = new Date(`2000-01-01T${b[1]}`);
     return horaA - horaB;
-  })
-  .map((item, index) => createData(index, ...item));
+  }).map((item, index) => createData(index, ...item));
 
 
 const otherData = sample
@@ -51,8 +50,7 @@ const otherData = sample
     const dateA = new Date(`${a[0]}T${a[1]}`);
     const dateB = new Date(`${b[0]}T${b[1]}`);
     return dateA - dateB;
-  })
-  .map((item, index) => createData(todayData.length + index, ...item));
+  }).map((item, index) => createData(todayData.length + index, ...item));
 
 
 const rows = [...todayData, ...otherData];

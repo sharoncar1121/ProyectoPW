@@ -25,9 +25,6 @@ export const Dashboard = () => {
     marginLeft: '2%', 
     textAlign: 'center' 
   };
-  const boxStyles4 = {
-    marginLeft: '10%' 
-  };
 
   return (
     
@@ -37,8 +34,8 @@ export const Dashboard = () => {
         <Typography sx={boxStyles3} variant="h4" gutterBottom> Ultimos Expedientes Creados </Typography>
       </Box>
       <Box sx={boxStyles1}>
-        <ListaCitas />
-        <UltimoExpeCreados sx={boxStyles4}/>
+        <ListaCitas/>
+        <UltimoExpeCreados/>
       </Box>
     </Box>
   );

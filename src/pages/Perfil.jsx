@@ -17,7 +17,10 @@ export const Perfil = () => {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px' }}>
         <Notas/>
       </div>
+      <div style={{ display: 'flex',  justifyContent: 'right', paddingBlock: '40px', paddingRight:'10%'}}>
       <BotonGuardar/>
+      </div>
+      
   </>
   )
 }

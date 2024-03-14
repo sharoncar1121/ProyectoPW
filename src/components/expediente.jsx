@@ -2,13 +2,31 @@ import  {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
-
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import {Typography, TextField, Container, FormControl, NativeSelect} from '@mui/material';
 
 
 export const Expediente = () => {
+  const [nombre, setNombre] = useState(true);
+  const [Especie, setEspecie] = useState(true);
+  const [fechaRegistro, setFechaRegistro] = useState(true);;
+  const [raza, setRaza] = useState('');
+  const [color, setColor] = useState('');
+  const [fechaNacimiento, setNacimiento] = useState('');
+  const [propietario, setPropietario] = useState('');
+  const [telefono, setTelefono] = useState('');
+  
+  const [botonPresionado, setBotonPresionado] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setBotonPresionado(true);
+    setNombre(!nombre)
+  };
+
+  console.log(nombre)
   return (
   <>
     <main>  
@@ -23,7 +41,7 @@ export const Expediente = () => {
         <div style={{ width: '75%',  float:'left'}}>
           <Typography variant="subtitle1" gutterBottom style={{ width: '4%', height:'80px', float:'left', paddingTop:'10px'}}> Nombre: </Typography>
           <Container style={{ width: '21%',  float:'left', paddingLeft:'3%'}}>
-              <TextField style={{ float:'left', width:'270px'}} label='Ejemplo' variant='outlined' type='text' disabled></TextField>
+              <TextField style={{ float:'left', width:'270px'}} label='Ejemplo' variant='outlined' type='text' disabled={nombre} id='nombreMascota'></TextField>
            </Container> 
 
           <Typography variant="subtitle1" gutterBottom style={{ width: '4%',  height:'80px', float:'left', paddingTop:'10px', marginLeft:'4%'}}> Especie: </Typography>
@@ -79,7 +97,7 @@ export const Expediente = () => {
         </div>
       </div>
       <Stack direction="row" spacing={2}>
-        <Button variant="contained" style={{ width: '200px',  marginLeft:'40px', color:'#fff', background:'#000'}}> Editar Expediente </Button>
+        <Button variant="contained" style={{ width: '200px',  marginLeft:'40px', color:'#fff', background:'#000'}} onClick={handleSubmit}> Editar Expediente </Button>
       </Stack>
 
     </main>

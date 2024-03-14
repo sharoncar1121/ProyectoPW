@@ -49,7 +49,6 @@ const rows = DataApi.map((item, index) => {
 
 
 const TablaComponentes = {
-    // eslint-disable-next-line react/display-name
     Scroller: React.forwardRef((props, ref) => (
       <TableContainer component={Paper} {...props} ref={ref} />
     )),
@@ -57,52 +56,47 @@ const TablaComponentes = {
       <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed' }} />
     ),
     TableHead,
-    // eslint-disable-next-line react/prop-types, no-unused-vars
     TableRow: ({ item: _item, ...props }) => <TableRow {...props} />,
-    // eslint-disable-next-line react/display-name
     TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
 };
 
 
-
-
-
 function rowContent(_index, row) {
   return (
-    <React.Fragment  >
+    <TableRow key={row.id} onClick={() => handleRowClick(row)} style={{ cursor: 'pointer' }}>
       {columns.map((column) => (
+        console.log(column),
         <TableCell
           key={column.dataKey}
           align={'left'}
+          width={'41%'}
           sx={{
             backgroundColor: 'rgba(129, 153, 146, 0.7)',
             color: '#000000',
             fontSize:'20px'
-          }}
-        >
+          }}>
           {column.dataKey === 'imagen' ? (
-            <img src={row[column.dataKey]} alt={row[column.label]} style={{ maxWidth: '120px', height: '120px', borderRadius:'50%'}} />
+            <img src={row[column.dataKey]} alt={row[column.label]} style={{ maxWidth: '100px', height: '100px', borderRadius:'50%'}} />
           ) : (
-            row[column.label ]
+            row[column.label]
           )}
         </TableCell>
       ))}
-    </React.Fragment>
+    </TableRow>
   );
 }
 
 
 
+
 export const UltimoExpeCreados = () => {
   const reversedRows = rows.slice().reverse(); // Invertir el orden de las filas
-
   return (
-    <Paper style={{ height: 400, width: '100%', marginLeft:'2%' }}>
+    <Paper style={{ height: '400', width: '100%', marginLeft:'10%' }}>
       <TableVirtuoso
         data={reversedRows}
         components={TablaComponentes}
-        itemContent={rowContent}
-      />
+        itemContent={rowContent}/>
     </Paper>
   );
 }

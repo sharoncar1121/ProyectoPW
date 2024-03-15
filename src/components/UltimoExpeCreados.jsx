@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { TableVirtuoso } from 'react-virtuoso';
-import { useNavigate } from "react-router-dom";
 
 
 const DataApi = [
@@ -59,11 +58,12 @@ const TablaComponentes = {
 };
 
 export const UltimoExpeCreados = () => {
-    const navigate = useNavigate(); // Obtenemos la función de navegación
-
+  // Obtenemos la función de navegación
+  
     function handleRowClick(id) {
       console.log(DataApi[id]);
-        navigate(`/perfil?id=${id}`);
+      const registro = DataApi[id]; // Suponiendo que DataApi es tu arreglo de datos
+      window.location.href = `/perfil?id=${id}`;
     }
 
     function rowContent(_index, row) {

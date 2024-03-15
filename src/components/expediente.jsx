@@ -3,12 +3,39 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import {Typography, TextField, Container, FormControl, NativeSelect} from '@mui/material';
 
 
+
+const DataApi = [
+  [
+    ['https://www.ngenespanol.com/wp-content/uploads/2023/02/dragon-de-komodo-el-lagarto-mas-grande-del-mundo.jpg', 'Lagarto','14-03-2024'],
+    ['https://t1.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_600.jpg', 'Nieve','13-03-2024' , 'canino', 'Persa', 'Blanco','12-03-2010', 'Luis Cardona', '33481474' ],
+    ['https://t1.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_600.jpg', 'Manchas','12-03-2024' , 'canino', 'Persa', 'Blanco','12-03-2010', 'Luis Cardona', '33481474' ],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Rex','12-03-2024'],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Oso','12-03-2024'],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Max','12-03-2024'],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Leo','12-03-2024'],
+    ['https://t1.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_600.jpg', 'Garfield','12-03-2024', 'canino', 'Persa', 'Blanco','12-03-2010', 'Luis Cardona', '33481474' ],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Sony','12-03-2024'],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Spy','12-03-2024'],
+    ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRijJuisnRc0CoMe8S4vCd4khXkefl6wj3P5gfdmnDSOcP_lY5Sbr_B6enB5DlX9J6M--M&usqp=CAU', 'Jack','12-03-2024'],
+    ['https://t1.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_600.jpg', 'Sol','12-03-2024', 'Exotico', 'canino', 'Persa', 'Blanco','12-03-2010', 'Luis Cardona', '33481474' ],
+    ['https://t1.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_600.jpg', 'Luna', '12-03-2024', 'canino', 'Persa', 'Blanco','12-03-2010', 'Luis Cardona', '33481474' ]
+  ]
+  
+]
+
+
 export const Expediente = () => {
+  const location = useLocation();
+  const id = new URLSearchParams(location.search).get('id');
+  console.log(id)
+
   const [nombre, setNombre] = useState(true);
   const [especie, setEspecie] = useState(true);
   const [fechaRegistro, setFechaRegistro] = useState(true);

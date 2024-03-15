@@ -1,6 +1,7 @@
 import React from 'react';
 import {Table,TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
 import { TableVirtuoso } from 'react-virtuoso';
+import { useNavigate } from "react-router-dom";
 
 const DataApi = [
     ['https://t1.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_600.jpg', 'Luna', '12-03-2024'],
@@ -18,85 +19,76 @@ const DataApi = [
     //['https://www.ngenespanol.com/wp-content/uploads/2023/02/dragon-de-komodo-el-lagarto-mas-grande-del-mundo.jpg', 'Lagarto','14-03-2024'],
 ];
     
-function createData(id, imagen, nombre, FechaRegistro ) {
-  return { id, imagen, nombre, FechaRegistro};
+
+function createData(id, imagen, nombre, FechaRegistro) {
+    return { id, imagen, nombre, FechaRegistro };
 }
 
-
 const columns = [
-  {
-    width: 120,
-    label: 'Imagen',
-    dataKey: 'imagen'
-  },
-  {
-    width: 120,
-    label: 'nombre',
-    dataKey: 'nombre'
-  },
-  {
-    width: 120,
-    label: 'FechaRegistro',
-    dataKey: 'fechaRegistro'
-  }
+    {
+        width: 120,
+        label: 'Imagen',
+        dataKey: 'imagen'
+    },
+    {
+        width: 120,
+        label: 'nombre',
+        dataKey: 'nombre'
+    },
+    {
+        width: 120,
+        label: 'FechaRegistro',
+        dataKey: 'fechaRegistro'
+    }
 ];
-
 
 const rows = DataApi.map((item, index) => {
     return createData(index, ...item);
-})
-
-
+});
 
 const TablaComponentes = {
     Scroller: React.forwardRef((props, ref) => (
-      <TableContainer component={Paper} {...props} ref={ref} />
+        <TableContainer component={Paper} {...props} ref={ref} />
     )),
     Table: (props) => (
-      <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed' }} />
+        <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed' }} />
     ),
     TableHead,
-    TableRow: ({ item: _item, ...props }) => <TableRow {...props} />,
+    TableCell,
     TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
 };
 
+export const UltimoExpeCreados = () => {
+    const reversedRows = rows.slice().reverse(); // Invertir el orden de las filas
 
-function rowContent(_index, row) {
-  return (
-    <TableRow key={row.id} onClick={() => handleRowClick(row)} style={{ cursor: 'pointer' }}>
-      {columns.map((column) => (
-        console.log(column),
-        <TableCell
-          key={column.dataKey}
-          align={'left'}
-          width={'41%'}
-          sx={{
-            backgroundColor: 'rgba(129, 153, 146, 0.7)',
-            color: '#000000',
-            fontSize:'20px'
-          }}>
-          {column.dataKey === 'imagen' ? (
-            <img src={row[column.dataKey]} alt={row[column.label]} style={{ maxWidth: '100px', height: '100px', borderRadius:'50%'}} />
-          ) : (
-            row[column.label]
-          )}
-        </TableCell>
-      ))}
-    </TableRow>
-  );
+    return (
+        <Paper style={{ height: '400', width: '100%', marginLeft: '10%' }}>
+            <TableVirtuoso
+                data={reversedRows}
+                components={TablaComponentes}
+                itemContent={rowContent}
+            />
+        </Paper>
+    );
 }
 
-
-
-
-export const UltimoExpeCreados = () => {
-  const reversedRows = rows.slice().reverse(); // Invertir el orden de las filas
-  return (
-    <Paper style={{ height: '400', width: '100%', marginLeft:'10%' }}>
-      <TableVirtuoso
-        data={reversedRows}
-        components={TablaComponentes}
-        itemContent={rowContent}/>
-    </Paper>
-  );
+function rowContent(_index, row) {
+    return columns.map((column) => (
+        <TableCell
+            key={column.dataKey}
+            align={'left'}
+            width={'41%'}
+            sx={{
+                backgroundColor: 'rgba(129, 153, 146, 0.7)',
+                color: '#000000',
+                fontSize: '20px'
+            }}
+        >
+            {column.dataKey === 'imagen' ? (
+                <img src={row[column.dataKey]} alt={row[column.label]} style={{ maxWidth: '100px', height: '100px', borderRadius: '50%' }} />
+            ) : (
+                row[column.label]
+            )}
+        </TableCell>
+    ));
 }

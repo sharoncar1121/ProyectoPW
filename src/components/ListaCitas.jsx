@@ -15,11 +15,11 @@ const sample = [
   ['15-03-2024', '21:40', 'Dino', 'Desparacitación'],
   ['16-03-2024', '12:30', 'Baxter', 'chequeo'],
   ['17-03-2024', '01:30', 'Firulais','Desparacitación'],
-  ['15-03-2024', '02:30', 'Baxter', 'Chequeo'],
+  ['15-03-2023', '02:30', 'Baxter', 'Chequeo'],
   ['09-03-2023', '05:30', 'Baxter', 'Operación'],
   ['11-03-2024', '12:30', 'Dexter', 'Desparacitación'],
   ['11-03-2024', '11:30', 'Dino', 'Desparacitación'],
-  ['15-03-2024', '04:30', 'Baxter', 'Chequeo'],
+  ['15-03-2023', '04:30', 'Baxter', 'Chequeo'],
   ['30-04-2023', '04:30', 'Dino', 'Desparacitación'],
   ['30-04-2023', '04:30', 'Dino', 'Desparacitación'],
 ];

@@ -6,6 +6,7 @@ import { Typography, Alert } from '@mui/material';
 import { Notas } from '../components/Notas';
 import BotonGuardar from '../components/BotonGuardar';
 import BotonCancelar from '../components/BotonCancelar';
+import FAB from '../components/FABFormVacunacion';
 
 export const Form = () => {
   const [guardadoExitoso, setGuardadoExitoso] = useState(false);
@@ -50,6 +51,10 @@ export const Form = () => {
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px' }}>
         <FormVacunacion />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px' }}>
+        <FAB/>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px' }}>

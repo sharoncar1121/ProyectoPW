@@ -31,7 +31,7 @@ export const Dashboard = () => {
     <Box >
       <Box sx={boxStyles2}>
         <Typography sx={boxStyles3} variant="h4" gutterBottom> Próximas Citas </Typography>
-        <Typography sx={boxStyles3} variant="h4" gutterBottom> Ultimos Expedientes Creados </Typography>
+        <Typography sx={boxStyles3} variant="h4" gutterBottom> Últimos Expedientes Creados </Typography>
       </Box>
       <Box sx={boxStyles1}>
         <ListaCitas/>

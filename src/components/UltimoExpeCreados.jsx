@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { TableVirtuoso } from 'react-virtuoso';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const DataApi = [
@@ -20,7 +21,7 @@ const DataApi = [
 ];
 
 function createData(id, imagen, nombre, FechaRegistro) {
-    return { id, imagen, nombre, FechaRegistro };
+    return { id: uuidv4(), imagen, nombre, FechaRegistro };
 }
 
 const columns = [
@@ -37,7 +38,7 @@ const columns = [
     {
         width: 120,
         label: 'FechaRegistro',
-        dataKey: 'fechaRegistro'
+        dataKey: 'FechaRegistro'
     }
 ];
 
@@ -66,37 +67,70 @@ export const UltimoExpeCreados = () => {
       window.location.href = `/perfil?id=${id}`;
     }
 
-    function rowContent(_index, row) {
+function fixedHeaderContent() {
+        return (
+          <TableRow sx={{ backgroundColor: '#f0f0f0' }}>
+            {['Imagen', 'Nombre', 'Fecha Creacion'].map(label => (
+              <TableCell
+                key={label}
+                variant="head"
+                align='center'
+                sx={{
+                  backgroundColor: '#6AA098',
+                  color: '#000000',
+                }}
+              >
+                {label}
+              </TableCell>
+            ))}
+          </TableRow>
+        );
+      }
+
+
+      function rowContent(_index, row) {
         return (
             <TableRow key={row.id} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(row.id)}>
-                {columns.map((column) => (
-                    <TableCell
-                        key={column.dataKey}
-                        align={'left'}
-                        width={'41%'}
-                        sx={{
-                            backgroundColor: 'rgba(129, 153, 146, 0.7)',
-                            color: '#000000',
-                            fontSize: '20px'
-                        }}>
-                        {column.dataKey === 'imagen' ? (
-                            <img src={row[column.dataKey]} alt={row[column.label]} style={{ maxWidth: '100px', height: '100px', borderRadius: '50%' }} />
-                        ) : (
-                            row[column.label]
-                        )}
-                    </TableCell>
-                ))}
+                <React.Fragment>
+                    {['imagen', 'nombre', 'FechaRegistro'].map(key => (
+                        <TableCell
+                            key={key}
+                            align='center'
+                            sx={{
+                                backgroundColor:'rgba(129, 153, 146, 0.7)',
+                                color: '#000000',
+                                fontSize: '20px'
+                            }}
+                        >
+                            {key === 'imagen' ? (
+                                <img
+                                    src={row[key]}
+                                    alt={row[key]}
+                                    style={{
+                                        maxWidth: '100px',
+                                        height: '100px',
+                                        borderRadius: '50%'
+                                    }}
+                                />
+                            ) : (
+                                row[key]
+                            )}
+                        </TableCell>
+                    ))}
+                </React.Fragment>
             </TableRow>
         );
     }
-
+    
+    
     const reversedRows = rows.slice().reverse(); // Invertir el orden de las filas
 
     return (
-        <Paper style={{ height: '400', width: '100%', marginLeft: '10%' }}>
+        <Paper style={{ height: 400, width: '100%', marginLeft: '10%' }}>
             <TableVirtuoso
                 data={reversedRows}
                 components={TablaComponentes}
+                fixedHeaderContent={fixedHeaderContent}
                 itemContent={rowContent} />
         </Paper>
     );

@@ -10,11 +10,11 @@ import Paper from '@mui/material/Paper';
 import { TableVirtuoso } from 'react-virtuoso';
 
 const sample = [
-  ['15-03-2024', '23:30', 'Baxter', 'chequeo'],
-  ['15-03-2024', '22:30', 'Ranger', 'vacuna'],
-  ['15-03-2024', '21:40', 'Dino', 'Desparacitación'],
-  ['16-03-2024', '12:30', 'Baxter', 'chequeo'],
-  ['17-03-2024', '01:30', 'Firulais','Desparacitación'],
+  ['21-03-2024', '23:30', 'Baxter', 'chequeo'],
+  ['21-03-2024', '22:30', 'Ranger', 'vacuna'],
+  ['21-03-2024', '21:40', 'Dino', 'Desparacitación'],
+  ['22-03-2024', '12:30', 'Baxter', 'chequeo'],
+  ['23-03-2024', '01:30', 'Firulais','Desparacitación'],
   ['15-03-2023', '02:30', 'Baxter', 'Chequeo'],
   ['09-03-2023', '05:30', 'Baxter', 'Operación'],
   ['11-03-2024', '12:30', 'Dexter', 'Desparacitación'],

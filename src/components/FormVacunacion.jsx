@@ -16,28 +16,8 @@ export const FormVacunacion = () => {
         <Grid container spacing={1} style={{ padding: '10px',  }}> {/* Grid contenedor con espacio entre elementos y padding */}
         {/* Filas de cuadrícula para los elementos del formulario */}
         <Grid item xs={6}>
-        <Typography variant="subtitle1" style={{textAlign:'center', fontWeight: 'bold', paddingTop: '10px'}}>Vacuna Aplicada</Typography>
-          <Box
-            style={{
-              border: '1px solid #000',
-              padding: '10px',
-              borderRadius: '8px', // Bordes redondeados uniformes
-              boxShadow: `1px 2px 6px 1px rgba(0, 0, 0, 0.4)`,
-            }}
-          >
-            <Typography variant="subtitle1">Fecha:</Typography>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker label="Seleccione la Fecha" />
-            </LocalizationProvider>
-            <Typography variant="subtitle1">Peso:</Typography>
-            <TextField label="Ingrese el Peso" variant="outlined" type="number" helperText="ej. 25.14" />
-          </Box>
-        </Grid>
-
-        {/* Fila de la cuadrícula para Vacuna Aplicada y Dosis */}
-        <Grid item xs={6}>
-        <Typography variant="subtitle1" style={{textAlign:'center', fontWeight: 'bold', paddingTop: '10px'}}>refuerzo Aplicado</Typography>
-          <Box
+        <Typography variant="subtitle1" style={{textAlign:'center', fontWeight: 'bold', paddingTop: '10px'}}>Vacuna Aplicada.</Typography>
+        <Box
             style={{
               border: '1px solid #000',
               padding: '10px',
@@ -58,9 +38,10 @@ export const FormVacunacion = () => {
           </Box>
         </Grid>
 
-        {/* Fila de la cuadrícula para el refuerzo Aplicado y Dosis */}
+        {/* Fila de la cuadrícula para Vacuna Aplicada y Dosis */}
         <Grid item xs={6}>
-          <Box
+        <Typography variant="subtitle1" style={{textAlign:'center', fontWeight: 'bold', paddingTop: '10px'}}>Refuerzo Aplicado.</Typography>
+        <Box
             style={{
               border: '1px solid #000',
               padding: '10px',
@@ -83,8 +64,29 @@ export const FormVacunacion = () => {
           </Box>
         </Grid>
 
+        {/* Fila de la cuadrícula de fecha */}
+        <Grid item xs={6}>
+        <Typography variant="subtitle1" style={{textAlign:'center', fontWeight: 'bold', paddingTop: '10px'}}>Fecha de Tratamiento.</Typography>
+        <Box
+            style={{
+              border: '1px solid #000',
+              padding: '10px',
+              borderRadius: '8px', // Bordes redondeados uniformes
+              boxShadow: `1px 2px 6px 1px rgba(0, 0, 0, 0.4)`,
+            }}
+          >
+            <Typography variant="subtitle1">Fecha:</Typography>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker label="Seleccione la Fecha" />
+            </LocalizationProvider>
+            <Typography variant="subtitle1">Peso:</Typography>
+            <TextField label="Ingrese el Peso" variant="outlined" type="number" helperText="ej. 25.14" />
+          </Box>
+        </Grid>
+
         {/* Fila de la cuadrícula para Fecha próxima cita y Nombre Veterinario */}
         <Grid item xs={6}>
+        <Typography variant="subtitle1" style={{textAlign:'center', fontWeight: 'bold', paddingTop: '10px'}}>Programar Proxima Cita.</Typography>
           <Box
             style={{
               border: '1px solid #000',
@@ -101,6 +103,11 @@ export const FormVacunacion = () => {
             <TextField label="Ingrese el Nombre" variant="outlined" type="text" helperText="Ej. Jose Ramon Molina" fullWidth />
           </Box>
         </Grid>
+
+
+
+
+        
       </Grid>
       </div>
     </>

@@ -11,7 +11,9 @@ export const Dashboard = () => {
     marginLeft: '5%', 
     marginTop: '3vh',
     textAlign: 'center',
-    display: 'flex'
+    display: 'flex',
+    marginBottom: '10px',
+    paddingBottom: '10px'
   };
   const boxStyles2 = {
     width: '90%',

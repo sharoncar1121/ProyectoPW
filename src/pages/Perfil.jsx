@@ -4,6 +4,7 @@ import {Desparasitacion} from '../components/Desparasitacion'
 import {Notas} from '../components/Notas'
 import BotonGuardar from '../components/BotonGuardar'
 import FAB from "../components/FABFormVacunacion"
+import FABDes from "../components/FABFormDesparasitacion"
 
 export const Perfil = () => {
   return (
@@ -17,6 +18,9 @@ export const Perfil = () => {
       </div>
       <div aria-disabled style={{ paddingTop: '80px' }}>
         <Desparasitacion/>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px' }}>
+        <FABDes/>
       </div>
       <div aria-disabled style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '80px' }}>
         <Notas/>

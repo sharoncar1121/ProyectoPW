@@ -91,10 +91,12 @@ function fixedHeaderContent() {
 
       function rowContent(_index, row) {
         return (
-            <TableRow key={row.id} style={{ cursor: 'pointer' }} onClick={() => handleRowClick(row.id)}>
+            
                 <React.Fragment>
                     {['imagen', 'nombre', 'FechaRegistro'].map(key => (
                         <TableCell
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => handleRowClick(row.id)}
                             key={key}
                             align='center'
                             sx={{
@@ -119,7 +121,6 @@ function fixedHeaderContent() {
                         </TableCell>
                     ))}
                 </React.Fragment>
-            </TableRow>
         );
     }
     

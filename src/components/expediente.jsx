@@ -63,36 +63,36 @@ export const Expediente = () => {
             
             <div>
               <Typography variant="subtitle1" gutterBottom style={{ height: '40px', paddingTop: '10px' }}> Raza: </Typography>
-              <TextField label='Ejemplo' variant='outlined' type='text' disabled={raza}/>
+              <TextField label='Ej. Labrador' variant='outlined' type='text' disabled={raza}/>
             </div>
 
             <div>
               <Typography variant="subtitle1" gutterBottom style={{ height: '40px', paddingTop: '10px' }}> Color: </Typography>
-              <TextField label='Ejemplo' variant='outlined' type='text' disabled={color}/>
+              <TextField label='Ej. Marron' variant='outlined' type='text' disabled={color}/>
             </div>
 
             <div>
               <Typography variant="subtitle1" gutterBottom style={{ height: '40px', paddingTop: '10px' }}> Fecha De Registro: </Typography>
-              <TextField label='Ejemplo' variant='outlined' type='text' disabled={fechaRegistro}/>
+              <TextField variant='outlined' type='date' disabled={fechaRegistro}/>
             </div>
 
             <div>
               <Typography variant="subtitle1" gutterBottom style={{ height: '40px', paddingTop: '10px' }}> Fecha De Nacimiento: </Typography>
-              <TextField label='Ejemplo' variant='outlined' type='text' disabled={fechaNacimiento}/>
+              <TextField variant='outlined' type='date' disabled={fechaNacimiento}/>
             </div>
 
             <div>
               <Typography variant="subtitle1" gutterBottom style={{ height: '40px', paddingTop: '10px' }}> Propietario: </Typography>
-              <TextField label='Ejemplo' variant='outlined' type='text' disabled={propietario}/>
+              <TextField label='Ej. Jason' variant='outlined' type='text' disabled={propietario}/>
             </div>
 
             <div>
               <Typography variant="subtitle1" gutterBottom style={{ height: '40px', paddingTop: '10px' }}> Telefono: </Typography>
-              <TextField label='Ejemplo' variant='outlined' type='text' disabled={telefono}/>
+              <TextField label='Ej. 9999-9999' variant='outlined' type='text' disabled={telefono}/>
             </div>
           </div>
 
-          <Stack direction="row" spacing={2} style={{ justifyContent: 'center', marginTop: '20px' }}>
+          <Stack direction="row" spacing={2} style={{ justifyContent: 'center', marginTop: '30px' }}>
             <Button variant="contained" style={{ width: '200px', color: '#fff', background: '#000' }} onClick={handleSubmit}>{nombre ? 'Editar Expediente' : 'Cancelar Edición'}</Button>
           </Stack>
         </div>

@@ -32,7 +32,6 @@ export const Filtro = ({ onFilterChange }) => {
 
       <FormControl component="fieldset">
         <RadioGroup aria-label="filtro" name="filtro" value={selectedFilter} onChange={handleRadioChange}>
-          <FormControlLabel value="id" control={<Radio />} label="ID" style={{ marginBottom: '10px' }} />
           <FormControlLabel value="raza" control={<Radio />} label="Raza" style={{ marginBottom: '10px' }} />
           <FormControlLabel value="nombre" control={<Radio />} label="Nombre" style={{ marginBottom: '10px' }} />
           <FormControlLabel value="fechaRegistro" control={<Radio />} label="Fecha de Registro" style={{ marginBottom: '10px' }} />

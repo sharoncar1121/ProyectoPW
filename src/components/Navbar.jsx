@@ -30,7 +30,7 @@ export const Navbar = () => {
 
         {/* Nombre o Marca */}
         <Typography variant="h4" component="p" style={{ flexGrow: 1, color: textColor, fontWeight: 'bold',  }}>
-          Agromercial <br /> El Campo
+          Agrocomercial <br /> El Campo
         </Typography>
 
         <Grid container justifyContent="space-evenly">
